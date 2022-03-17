@@ -82,7 +82,7 @@ void variableDeclarations()
     
     
     
-    ignoreUnused(5, 20, 100, 2.5f, 1.5f, 195.7f, true, false, true, 5.999999, 5.0, 5, 'A', 'E', 'B', 150, 75, 70); //passing each variable declared to the ignoreUnused() function
+    ignoreUnused(value, amount, total, daughterAge, sonAge, gasPrice, shouldPlaySound, turnTapOn, turnSongUp, var1, var2, var3, grade, key, mark, price, cost, score); //passing each variable declared to the ignoreUnused() function
 }
 
 /*
@@ -101,7 +101,7 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
  */
 bool rentHotelRoom(int rentalLength, int suiteType = 2)
 {
-    ignoreUnused(rentalLength,suiteType);
+    ignoreUnused(rentalLength, suiteType);
     return { };
 }
 /*
@@ -123,7 +123,7 @@ bool isInTune(char tuning = 'A')
 /*
  4)
  */
-int battingAverage(float leadOff = 0.290f, float cleanUp = 0.305f)
+int getBattingAverage(float leadOff = 0.290f, float cleanUp = 0.305f)
 {
     ignoreUnused(leadOff, cleanUp);
     return { };
@@ -131,7 +131,7 @@ int battingAverage(float leadOff = 0.290f, float cleanUp = 0.305f)
 /*
  5)
  */
-int savePercentage(float backupGoalie = 0.920f, float callupGoalie = 0.850f, float franchiseGoalie = 0.975f)
+int getSavePercentage(float backupGoalie = 0.920f, float callupGoalie = 0.850f, float franchiseGoalie = 0.975f)
 {
     ignoreUnused(backupGoalie, callupGoalie,     
     franchiseGoalie);
@@ -140,7 +140,7 @@ int savePercentage(float backupGoalie = 0.920f, float callupGoalie = 0.850f, flo
 /*
  6)
  */
-int earnedRunAverage(float starter = 3.45f, float reliever = 4.69f, float closer = 1.67f)
+int getEarnedRunAverage(float starter = 3.45f, float reliever = 4.69f, float closer = 1.67f)
 {
     ignoreUnused(starter, reliever, closer);
     return { };
@@ -148,14 +148,14 @@ int earnedRunAverage(float starter = 3.45f, float reliever = 4.69f, float closer
 /*
  7)
  */
-void nhlTeamsGeographically(int usa = 25, int canada = 7)
+void showTeamsGeographically(int usa = 25, int canada = 7)
 {
     ignoreUnused(usa, canada);
 }
 /*
  8)
  */
-bool gameOn(unsigned int homeTeam = 3, unsigned int awayTeam = 0)
+bool showScore(unsigned int homeTeam = 3, unsigned int awayTeam = 0)
 {
     ignoreUnused(homeTeam, awayTeam);
     return { };
@@ -163,7 +163,7 @@ bool gameOn(unsigned int homeTeam = 3, unsigned int awayTeam = 0)
 /*
  9)
  */
-bool gameCancelled(bool covidRules = true, char attendance = 'n' )
+bool cancelGame(bool covidRules = true, char attendance = 'n' )
 {
     ignoreUnused(covidRules, attendance);
     return { };
@@ -202,22 +202,22 @@ int main()
     //3)
     auto tune = isInTune('A');
     //4)
-    auto getAverage = battingAverage(0.290f, 0.305f);
+    auto statAverage = getBattingAverage(0.290f, 0.305f);
     //5)
-    auto getSavePercentage = savePercentage(0.920f, 0.850f, 0.975f);
+    auto statSavePercentage = getSavePercentage(0.920f, 0.850f, 0.975f);
     //6)
-    auto getERA = earnedRunAverage(3.45f, 4.69f, 1.67f);
+    auto statERA = getEarnedRunAverage(3.45f, 4.69f, 1.67f);
     //7)
-    nhlTeamsGeographically(25, 7);
+    showTeamsGeographically(25, 7);
     //8)
-    auto playGame = gameOn(3, 0);
+    auto playGame = showScore(3, 0);
     //9)
-    auto gameStatus = gameCancelled(true, 'n' );
+    auto gameStatus = cancelGame(true, 'n' );
     //10)
     auto refundStatus = getRefund(false, 'y');
     
     ignoreUnused(carRented);
-    ignoreUnused(roomRented, dinnerReady, tune, getAverage, getSavePercentage, getERA, playGame, gameStatus, refundStatus);
+    ignoreUnused(roomRented, dinnerReady, tune, statAverage, statSavePercentage, statERA, showScore, gameStatus, refundStatus);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
