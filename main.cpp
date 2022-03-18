@@ -59,7 +59,7 @@ unsigned integer
 void variableDeclarations()
 {
     //example:
-    int number = 2; //declaration of a variable named "number", that uses the primitive type 'int', and the variable's initial value is '2'
+    // int number = 2; //declaration of a variable named "number", that uses the primitive type 'int', and the variable's initial value is '2'
     int value = 5;
     int amount = 20;
     int total = 100;
@@ -109,7 +109,7 @@ bool rentHotelRoom(int rentalLength, int suiteType = 2)
  */
 bool cookDinner(int ingredientsList, int setTable, bool candleLit = true)
 {
-    ignoreUnused(ingredientsList, setTable);
+    ignoreUnused(ingredientsList, setTable, candleLit);
     return { };
 }
 /*
@@ -193,7 +193,7 @@ bool getRefund(bool fullRefund = false, char credit = 'y')
 int main()
 {
     //example of calling that function, storing the value, and passing it to ignoreUnused at the end of main()
-    auto carRented = rentACar(6, 2); 
+    // auto carRented = rentACar(6, 2); 
     
     //1)
     auto roomRented = rentHotelRoom(3, 0); 
@@ -216,8 +216,8 @@ int main()
     //10)
     auto refundStatus = getRefund(false, 'y');
     
-    ignoreUnused(carRented);
-    ignoreUnused(roomRented, dinnerReady, tune, statAverage, statSavePercentage, statERA, showScore, gameStatus, refundStatus);
+    // ignoreUnused(carRented);
+    ignoreUnused(roomRented, dinnerReady, tune, statAverage, statSavePercentage, statERA, playGame, gameStatus, refundStatus);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
