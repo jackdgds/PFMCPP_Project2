@@ -16,13 +16,14 @@ video: Chapter 2 - Part 3
  
  1) Write down the names of the 6 major primitive types available in C++  here:
  
+integer
+floating point
+boolean
+double floating point
+character 
+unsigned integer
  
- 
- 
- 
- 
- 
- 
+
  
  
 2) for each primitive type, write out 3 variable declarations inside the variableDeclaration() function on line 59.
@@ -58,11 +59,30 @@ video: Chapter 2 - Part 3
 void variableDeclarations()
 {
     //example:
-    int number = 2; //declaration of a variable named "number", that uses the primitive type 'int', and the variable's initial value is '2'
+    // int number = 2; //declaration of a variable named "number", that uses the primitive type 'int', and the variable's initial value is '2'
+    int value = 5;
+    int amount = 20;
+    int total = 100;
+    float daughterAge = 2.5f;
+    float sonAge = 1.5f;
+    float gasPrice = 195.7f;
+    bool shouldPlaySound = true;
+    bool turnTapOn = false;
+    bool turnSongUp = true;
+    double var1 = 5.999999;
+    double var2 = 5.0;
+    double var3 = 5;
+    char grade = 'A';
+    char key = 'E';
+    char mark = 'B';
+    unsigned int price = 150;
+    unsigned int cost = 75;
+    unsigned int score = 70;
     
-
     
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+    
+    
+    ignoreUnused(value, amount, total, daughterAge, sonAge, gasPrice, shouldPlaySound, turnTapOn, turnSongUp, var1, var2, var3, grade, key, mark, price, cost, score); //passing each variable declared to the ignoreUnused() function
 }
 
 /*
@@ -77,45 +97,85 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 } 
 
 /*
- 1)
+ 1) 
  */
-
+bool rentHotelRoom(int rentalLength, int suiteType = 2)
+{
+    ignoreUnused(rentalLength, suiteType);
+    return { };
+}
 /*
  2)
  */
-
+bool cookDinner(int ingredientsList, int setTable, bool candleLit = true)
+{
+    ignoreUnused(ingredientsList, setTable, candleLit);
+    return { };
+}
 /*
  3)
  */
-
+bool isInTune(char tuning = 'A')
+{
+    ignoreUnused(tuning);
+    return { };
+}
 /*
  4)
  */
-
+int getBattingAverage(float leadOff = 0.290f, float cleanUp = 0.305f)
+{
+    ignoreUnused(leadOff, cleanUp);
+    return { };
+}
 /*
  5)
  */
-
+int getSavePercentage(float backupGoalie = 0.920f, float callupGoalie = 0.850f, float franchiseGoalie = 0.975f)
+{
+    ignoreUnused(backupGoalie, callupGoalie,     
+    franchiseGoalie);
+    return { };
+}
 /*
  6)
  */
-
+int getEarnedRunAverage(float starter = 3.45f, float reliever = 4.69f, float closer = 1.67f)
+{
+    ignoreUnused(starter, reliever, closer);
+    return { };
+}
 /*
  7)
  */
-
+void showTeamsGeographically(int usa = 25, int canada = 7)
+{
+    ignoreUnused(usa, canada);
+}
 /*
  8)
  */
-
+bool showScore(unsigned int homeTeam = 3, unsigned int awayTeam = 0)
+{
+    ignoreUnused(homeTeam, awayTeam);
+    return { };
+}
 /*
  9)
  */
-
+bool cancelGame(bool covidRules = true, char attendance = 'n' )
+{
+    ignoreUnused(covidRules, attendance);
+    return { };
+}
 /*
  10)
  */
-
+bool getRefund(bool fullRefund = false, char credit = 'y')
+{
+    ignoreUnused(fullRefund, credit);
+    return { };
+}
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
@@ -133,30 +193,31 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 int main()
 {
     //example of calling that function, storing the value, and passing it to ignoreUnused at the end of main()
-    auto carRented = rentACar(6, 2); 
+    // auto carRented = rentACar(6, 2); 
     
     //1)
-    
+    auto roomRented = rentHotelRoom(3, 0); 
     //2)
-    
+    auto dinnerReady = cookDinner(10, 2, true);
     //3)
-    
+    auto tune = isInTune('A');
     //4)
-    
+    auto statAverage = getBattingAverage(0.290f, 0.305f);
     //5)
-    
+    auto statSavePercentage = getSavePercentage(0.920f, 0.850f, 0.975f);
     //6)
-    
+    auto statERA = getEarnedRunAverage(3.45f, 4.69f, 1.67f);
     //7)
-    
+    showTeamsGeographically(25, 7);
     //8)
-    
+    auto playGame = showScore(3, 0);
     //9)
-    
+    auto gameStatus = cancelGame(true, 'n' );
     //10)
+    auto refundStatus = getRefund(false, 'y');
     
-    
-    ignoreUnused(carRented);
+    // ignoreUnused(carRented);
+    ignoreUnused(roomRented, dinnerReady, tune, statAverage, statSavePercentage, statERA, playGame, gameStatus, refundStatus);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
