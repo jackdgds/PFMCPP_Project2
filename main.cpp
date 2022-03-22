@@ -35,6 +35,11 @@ unsigned integer
 3) Declare 10 free functions
     each declaration should have a random number of parameters in the function parameter list.
     When naming your parameters, choose names that are relevant to the task implied by the function's name.
+    remember:
+    Name functions what they do
+        takeDogForWalk(int distanceInYards);
+    Name variables what they are.
+        int numStepsSinceStart;
 
 4) add { ignoreUnused( ); } after each declaration in place of the closing semicolon
 5) pass each of your function parameters to the ignoreUnused function like you did in b)
